@@ -3,15 +3,15 @@
 </p>
 
 <p align="center">
-  <strong>An open-weight edge foundation model that beats Cactus Needle 3 at 75% less disk space.</strong><br/>
-  <em>Ternary BitNet b1.58 quantization • Zero floating-point multiplications • 0.0% JSON syntax hallucinations</em>
+  <strong>The Sub-8 MB Open-Source Edge Foundation Model for Tool Calling & Structured Extraction.</strong><br/>
+  <em>Pure integer arithmetic • BitNet b1.58 quantization • 75% smaller than Cactus Needle • Zero cloud latency</em>
 </p>
 
 <p align="center">
-  <a href="https://colab.research.google.com/github/kumarravula/microforge/blob/main/train_microforge.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a>
+  <a href="#-quickstart"><img src="https://img.shields.io/badge/Quickstart-3_Lines_of_Code-f97316?style=flat-square" alt="Quickstart"/></a>
   <a href="https://github.com/kumarravula/microforge"><img src="https://img.shields.io/github/stars/kumarravula/microforge?style=flat-square&logo=github&color=ff7b00" alt="Stars"/></a>
   <a href="https://github.com/kumarravula/microforge/network/members"><img src="https://img.shields.io/github/forks/kumarravula/microforge?style=flat-square&color=6366f1" alt="Forks"/></a>
-  <img src="https://img.shields.io/badge/Model_Size-7.19_MB-22c55e?style=flat-square&logo=speedtest&logoColor=white" alt="Model Size"/>
+  <img src="https://img.shields.io/badge/Pretrained_Weights-7.19_MB_Included-22c55e?style=flat-square&logo=speedtest&logoColor=white" alt="Pretrained Weights"/>
   <img src="https://img.shields.io/badge/Quantization-BitNet_b1.58-f97316?style=flat-square" alt="BitNet"/>
   <img src="https://img.shields.io/badge/Compute-Zero_FP_Mul-blue?style=flat-square" alt="Zero FP Multiplications"/>
   <img src="https://img.shields.io/badge/License-Apache_2.0-blue?style=flat-square" alt="License"/>
@@ -19,27 +19,120 @@
 
 ---
 
-> **MicroForge** is a sub-8 MB open-weight foundation model engineered for ultra-low-latency on-device function calling, mobile intent routing, and structured JSON extraction. By replacing floating-point multiply-accumulate operations with BitNet b1.58 ternary additions and subtractions, MicroForge delivers full 12-layer transformer reasoning on battery-constrained edge CPUs (ARM Cortex-M/A, RISC-V, x86) with **0.0% syntax hallucinations**.
+> **MicroForge** is a ready-to-use, ultra-lightweight edge foundation model library designed to be dropped directly into any Python project, mobile app, or IoT device. With pre-trained weights packed at just **7.19 MB**, MicroForge runs entirely on-device without requiring a GPU, internet connection, or paid API keys.
 
 ---
 
-## ⚡ 3-Line Quickstart (Just Like Needle)
+## ⚡ Quickstart: Use MicroForge in Your Project
 
-MicroForge is designed for zero-friction integration. Load the packed binary and invoke tool calls with three lines of Python:
+### 1. Installation
+
+Install directly from GitHub into your project's environment:
+
+```bash
+pip install git+https://github.com/kumarravula/microforge.git
+```
+
+*Or clone locally:*
+```bash
+git clone https://github.com/kumarravula/microforge.git
+cd microforge
+pip install -e .
+```
+
+---
+
+### 2. 3-Line Inference
+
+The pre-trained 7.19 MB binary weights are automatically loaded:
 
 ```python
 from microforge import MicroForge
 
-# 1. Load the pre-trained 7.19 MB binary
+# 1. Load the model (weights included, runs on CPU in <15ms)
 agent = MicroForge.load()
 
-# 2. Invoke tool routing with guaranteed schema constraints
+# 2. Invoke structured tool calling
 response = agent.call("Set an alarm for 7:30 AM tomorrow")
 
-# 3. Access typed outputs
+# 3. Access verified, typed outputs
 print(response.first_call)
 # -> {'name': 'ACTION_SET_ALARM', 'arguments': {'hour': 7, 'minute': 30}}
 print(f"Confidence: {response.confidence:.2f} | Latency: {response.latency_ms:.1f}ms")
+```
+
+---
+
+## 🛠️ Practical Recipes for Your Applications
+
+### Recipe A: Define Your Own Custom Tools (Smart Home, IoT, APIs)
+
+Pass your application's tool schemas dynamically. The **Finite State Machine (FSM) grammar engine** guarantees 100% valid JSON matching your schema:
+
+```python
+from microforge import MicroForge
+
+agent = MicroForge.load()
+
+# Define your application's tools
+my_tools = [
+    {
+        "name": "set_thermostat",
+        "description": "Adjust the room temperature",
+        "parameters": {
+            "room": {"type": "string"},
+            "temperature_celsius": {"type": "integer"}
+        }
+    },
+    {
+        "name": "play_music",
+        "description": "Stream an artist or playlist",
+        "parameters": {
+            "artist": {"type": "string"}
+        }
+    }
+]
+
+# Run tool routing with strict schema constraints
+result = agent.call("Turn the living room heat to 22 degrees", tools=my_tools)
+
+if result.has_tool_call:
+    action = result.first_call
+    print(f"Executing: {action['name']} with {action['arguments']}")
+    # -> Executing: set_thermostat with {'room': 'living room', 'temperature_celsius': 22}
+```
+
+---
+
+### Recipe B: Out-of-Scope Detection (Confidence Calibration)
+
+MicroForge features an integrated calibration head ($ECE < 0.05$). If a user prompt cannot be fulfilled by any tool, it gracefully rejects without hallucinating:
+
+```python
+result = agent.call("Tell me a fantasy bedtime story about dragons")
+
+if result.confidence < 0.5 or not result.has_tool_call:
+    print("Query rejected: Out-of-scope for automation tools.")
+    # Fall back to a cloud LLM only when necessary!
+```
+
+---
+
+### Recipe C: Run as a Local REST API Microservice
+
+Spin up an edge HTTP server for your web or mobile app:
+
+```bash
+python -m microforge.inference.serving --port 8000
+```
+
+```bash
+curl -X POST http://localhost:8000/v1/tool-call \
+  -H "Content-Type: application/json" \
+  -d '{
+    "query": "Send an email to sarah@example.com about project update",
+    "tools": [...]
+  }'
 ```
 
 ---
@@ -98,86 +191,10 @@ MicroForge is built on a four-pillar edge optimization recipe:
 
 ## 🚀 Interactive CLI Demo
 
-Test live queries locally with our built-in benchmark runner:
+Test queries directly from your terminal:
 
 ```bash
-python scripts/demo.py --model models/microforge.bin
-```
-
-```text
-======================================================================
-  MicroForge: Sub-15 MB Edge Automation Foundation Model Demo
-  Benchmarked Against Cactus Needle 3 (29 MB)
-======================================================================
-
-[+] Loaded 24 tool schemas from tools_schemas/droidcall_tools.json
-[+] Loading trained model from models/microforge.bin (7.19 MB)...
-
-----------------------------------------------------------------------
-  MODEL COMPRESSION & MEMORY FOOTPRINT
-----------------------------------------------------------------------
-  * Architecture:           12-Layer BitNet b1.58 + Factorized Embeddings + GQA + RoPE
-  * Active Parameters:      37,047,361
-  * MicroForge Stored Size: 7.19 MB (Ternary 1.58-bit packed)
-  * Cactus Needle 3 Size:   29.00 MB (CQ2 ~2.125-bit)
-  * Size Advantage:         75.2% Smaller Footprint than Needle 3!
-```
-
----
-
-## 🏋️ 1-Click Google Colab Training
-
-Train or fine-tune your own MicroForge model on a free T4 GPU in Google Colab:
-
-<p align="center">
-  <a href="https://colab.research.google.com/github/kumarravula/microforge/blob/main/train_microforge.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab" width="200"/></a>
-</p>
-
-1. Click the **Open In Colab** badge above.
-2. Select **Runtime → Change runtime type → T4 GPU**.
-3. Click **Runtime → Run all** (`Ctrl + F9`).
-4. In ~30 minutes, your custom 1.58-bit packed `microforge.bin` will train and download automatically to your browser!
-
----
-
-## 🌐 FastAPI REST Edge Deployment
-
-Deploy MicroForge as a high-performance local microservice:
-
-```bash
-python -m microforge.inference.serving --model models/microforge.bin --port 8000
-```
-
-Execute an inference request via `curl`:
-```bash
-curl -X POST http://localhost:8000/v1/tool-call \
-  -H "Content-Type: application/json" \
-  -d '{
-    "query": "Turn on living room lights and set brightness to 75%",
-    "tools": [
-      {
-        "name": "set_lighting",
-        "parameters": {
-          "room": {"type": "string"},
-          "brightness": {"type": "integer"}
-        }
-      }
-    ]
-  }'
-```
-
-Response:
-```json
-{
-  "function_calls": [
-    {
-      "name": "set_lighting",
-      "arguments": {"room": "living room", "brightness": 75}
-    }
-  ],
-  "confidence": 0.98,
-  "latency_ms": 14.8
-}
+python scripts/demo.py
 ```
 
 ---
@@ -196,7 +213,7 @@ microforge/
 │   ├── default.yaml                 # CPU test configuration
 │   └── droidcall_gpu.yaml           # Full 12-layer GPU training config
 ├── microforge/
-│   ├── __init__.py                  # High-level Python API (MicroForge.load())
+│   ├── __init__.py                  # High-level Python SDK: MicroForge.load()
 │   ├── model/                       # BitNet b1.58, GQA, RoPE, ALBERT factorized embeddings
 │   ├── tokenizer/                   # 4,096-vocab domain BPE tokenizer
 │   ├── data/                        # DroidCall parser, schema compiler, synthetic generator
@@ -210,21 +227,37 @@ microforge/
 │   ├── export.py                    # 1.58-bit packed binary exporter (< 8 MB)
 │   └── download_datasets.py         # Hugging Face DroidCall downloader
 ├── models/
-│   ├── microforge.bin               # Pre-trained 7.19 MB model binary
-│   └── tokenizer.json/              # 4,096-vocab domain tokenizer
+│   ├── microforge.bin               # Pre-trained 7.19 MB model binary (Included!)
+│   └── tokenizer.json/              # 4,096-vocab domain tokenizer (Included!)
 ├── tools_schemas/
 │   └── droidcall_tools.json         # 24 Android intent tool schemas
-├── train_microforge.ipynb           # 1-Click Google Colab GPU training notebook
-├── pyproject.toml                   # Standard packaging (pip install -e .)
+├── train_microforge.ipynb           # Optional training notebook for retraining
+├── pyproject.toml                   # Standard packaging (pip install .)
 ├── LICENSE                          # Apache License 2.0
 └── README.md
 ```
 
 ---
 
+## 🛠️ Advanced: Retraining & Adaptation (Optional)
+
+For researchers and developers who want to train MicroForge from scratch or fine-tune on custom domain datasets:
+
+* **1-Click Google Colab Training Notebook:** [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/kumarravula/microforge/blob/main/train_microforge.ipynb)
+* **Local CLI Training:**
+  ```bash
+  python scripts/train.py --config configs/default.yaml
+  ```
+* **Exporting Checkpoints to 1.58-bit Binary:**
+  ```bash
+  python scripts/export.py --checkpoint checkpoints/best_model.pt --out models/microforge.bin
+  ```
+
+---
+
 ## 📚 Benchmark Dataset
 
-MicroForge is validated on the official [DroidCall](https://huggingface.co/datasets/mllmTeam/DroidCall) benchmark (EMNLP 2024):
+MicroForge is pre-trained and validated on the official [DroidCall](https://huggingface.co/datasets/mllmTeam/DroidCall) benchmark (EMNLP 2024):
 * **8,588** Training intent samples
 * **1,073** Validation samples
 * **1,074** Test samples

@@ -59,14 +59,31 @@ class MicroForge:
         device: Optional[str] = None,
     ) -> "MicroForge":
         """Load MicroForge model binary and return a ready-to-use agent."""
-        t_path = Path(tokenizer_path)
+        root_dir = Path(__file__).resolve().parent.parent
+
         m_path = Path(model_path)
+        if not m_path.exists():
+            candidate = root_dir / model_path
+            if candidate.exists():
+                m_path = candidate
+
+        t_path = Path(tokenizer_path)
+        if not t_path.exists():
+            candidate = root_dir / tokenizer_path
+            if candidate.exists():
+                t_path = candidate
 
         tools: List[Dict[str, Any]] = []
-        if schemas_path and Path(schemas_path).exists():
-            with open(schemas_path, "r", encoding="utf-8") as f:
-                data = json.load(f)
-                tools = data.get("tools", data if isinstance(data, list) else [])
+        if schemas_path:
+            s_path = Path(schemas_path)
+            if not s_path.exists():
+                candidate = root_dir / schemas_path
+                if candidate.exists():
+                    s_path = candidate
+            if s_path.exists():
+                with open(s_path, "r", encoding="utf-8") as f:
+                    data = json.load(f)
+                    tools = data.get("tools", data if isinstance(data, list) else [])
 
         if t_path.exists():
             tokenizer = ToolTokenizer.load(t_path)
