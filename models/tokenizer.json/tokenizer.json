@@ -1,0 +1,3842 @@
+{
+  "version": "1.0",
+  "truncation": null,
+  "padding": null,
+  "added_tokens": [
+    {
+      "id": 0,
+      "content": "[PAD]",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    },
+    {
+      "id": 1,
+      "content": "[BOS]",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    },
+    {
+      "id": 2,
+      "content": "[EOS]",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    },
+    {
+      "id": 3,
+      "content": "[TOOL_START]",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    },
+    {
+      "id": 4,
+      "content": "[TOOL_END]",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    },
+    {
+      "id": 5,
+      "content": "[ARG_START]",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    },
+    {
+      "id": 6,
+      "content": "[ARG_END]",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    },
+    {
+      "id": 7,
+      "content": "[CONF]",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    },
+    {
+      "id": 8,
+      "content": "[SEP]",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    },
+    {
+      "id": 9,
+      "content": "[EMPTY]",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    },
+    {
+      "id": 10,
+      "content": "turn_on_lights",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    },
+    {
+      "id": 11,
+      "content": "room",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    },
+    {
+      "id": 12,
+      "content": "string",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    },
+    {
+      "id": 13,
+      "content": "living_room",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    },
+    {
+      "id": 14,
+      "content": "bedroom",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    },
+    {
+      "id": 15,
+      "content": "kitchen",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    },
+    {
+      "id": 16,
+      "content": "bathroom",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    },
+    {
+      "id": 17,
+      "content": "hallway",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    },
+    {
+      "id": 18,
+      "content": "garage",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    },
+    {
+      "id": 19,
+      "content": "office",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    },
+    {
+      "id": 20,
+      "content": "dining_room",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    },
+    {
+      "id": 21,
+      "content": "patio",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    },
+    {
+      "id": 22,
+      "content": "brightness",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    },
+    {
+      "id": 23,
+      "content": "integer",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    },
+    {
+      "id": 24,
+      "content": "color",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    },
+    {
+      "id": 25,
+      "content": "white",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    },
+    {
+      "id": 26,
+      "content": "warm_white",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    },
+    {
+      "id": 27,
+      "content": "cool_white",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    },
+    {
+      "id": 28,
+      "content": "red",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    },
+    {
+      "id": 29,
+      "content": "blue",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    },
+    {
+      "id": 30,
+      "content": "green",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    },
+    {
+      "id": 31,
+      "content": "yellow",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    },
+    {
+      "id": 32,
+      "content": "purple",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    },
+    {
+      "id": 33,
+      "content": "orange",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    },
+    {
+      "id": 34,
+      "content": "turn_off_lights",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    },
+    {
+      "id": 35,
+      "content": "set_thermostat",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    },
+    {
+      "id": 36,
+      "content": "temperature",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    },
+    {
+      "id": 37,
+      "content": "number",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    },
+    {
+      "id": 38,
+      "content": "unit",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    },
+    {
+      "id": 39,
+      "content": "celsius",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    },
+    {
+      "id": 40,
+      "content": "fahrenheit",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    },
+    {
+      "id": 41,
+      "content": "mode",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    },
+    {
+      "id": 42,
+      "content": "heat",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    },
+    {
+      "id": 43,
+      "content": "cool",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    },
+    {
+      "id": 44,
+      "content": "auto",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    },
+    {
+      "id": 45,
+      "content": "off",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    },
+    {
+      "id": 46,
+      "content": "lock_door",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    },
+    {
+      "id": 47,
+      "content": "door",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    },
+    {
+      "id": 48,
+      "content": "front_door",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    },
+    {
+      "id": 49,
+      "content": "back_door",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    },
+    {
+      "id": 50,
+      "content": "garage_door",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    },
+    {
+      "id": 51,
+      "content": "side_door",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    },
+    {
+      "id": 52,
+      "content": "action",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    },
+    {
+      "id": 53,
+      "content": "lock",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    },
+    {
+      "id": 54,
+      "content": "unlock",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    },
+    {
+      "id": 55,
+      "content": "set_blinds",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    },
+    {
+      "id": 56,
+      "content": "position",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    },
+    {
+      "id": 57,
+      "content": "play_music",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    },
+    {
+      "id": 58,
+      "content": "query",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    },
+    {
+      "id": 59,
+      "content": "source",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    },
+    {
+      "id": 60,
+      "content": "spotify",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    },
+    {
+      "id": 61,
+      "content": "apple_music",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    },
+    {
+      "id": 62,
+      "content": "youtube_music",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    },
+    {
+      "id": 63,
+      "content": "local",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    },
+    {
+      "id": 64,
+      "content": "radio",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    },
+    {
+      "id": 65,
+      "content": "device",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    },
+    {
+      "id": 66,
+      "content": "speaker",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    },
+    {
+      "id": 67,
+      "content": "headphones",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    },
+    {
+      "id": 68,
+      "content": "tv",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    },
+    {
+      "id": 69,
+      "content": "all",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    },
+    {
+      "id": 70,
+      "content": "shuffle",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    },
+    {
+      "id": 71,
+      "content": "boolean",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    },
+    {
+      "id": 72,
+      "content": "pause_media",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    },
+    {
+      "id": 73,
+      "content": "skip_track",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    },
+    {
+      "id": 74,
+      "content": "direction",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    },
+    {
+      "id": 75,
+      "content": "next",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    },
+    {
+      "id": 76,
+      "content": "previous",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    },
+    {
+      "id": 77,
+      "content": "set_volume",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    },
+    {
+      "id": 78,
+      "content": "level",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    },
+    {
+      "id": 79,
+      "content": "send_message",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    },
+    {
+      "id": 80,
+      "content": "contact",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    },
+    {
+      "id": 81,
+      "content": "message",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    },
+    {
+      "id": 82,
+      "content": "app",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    },
+    {
+      "id": 83,
+      "content": "sms",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    },
+    {
+      "id": 84,
+      "content": "whatsapp",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    },
+    {
+      "id": 85,
+      "content": "telegram",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    },
+    {
+      "id": 86,
+      "content": "signal",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    },
+    {
+      "id": 87,
+      "content": "make_call",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    },
+    {
+      "id": 88,
+      "content": "video",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    },
+    {
+      "id": 89,
+      "content": "set_timer",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    },
+    {
+      "id": 90,
+      "content": "duration",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    },
+    {
+      "id": 91,
+      "content": "label",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    },
+    {
+      "id": 92,
+      "content": "set_alarm",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    },
+    {
+      "id": 93,
+      "content": "time",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    },
+    {
+      "id": 94,
+      "content": "repeat",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    },
+    {
+      "id": 95,
+      "content": "once",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    },
+    {
+      "id": 96,
+      "content": "daily",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    },
+    {
+      "id": 97,
+      "content": "weekdays",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    },
+    {
+      "id": 98,
+      "content": "weekends",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    },
+    {
+      "id": 99,
+      "content": "create_reminder",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    },
+    {
+      "id": 100,
+      "content": "location",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    },
+    {
+      "id": 101,
+      "content": "add_calendar_event",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    },
+    {
+      "id": 102,
+      "content": "title",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    },
+    {
+      "id": 103,
+      "content": "start_time",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    },
+    {
+      "id": 104,
+      "content": "end_time",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    },
+    {
+      "id": 105,
+      "content": "attendees",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    },
+    {
+      "id": 106,
+      "content": "array",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    },
+    {
+      "id": 107,
+      "content": "get_weather",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    },
+    {
+      "id": 108,
+      "content": "get_forecast",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    },
+    {
+      "id": 109,
+      "content": "days",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    },
+    {
+      "id": 110,
+      "content": "get_directions",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    },
+    {
+      "id": 111,
+      "content": "origin",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    },
+    {
+      "id": 112,
+      "content": "destination",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    },
+    {
+      "id": 113,
+      "content": "driving",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    },
+    {
+      "id": 114,
+      "content": "walking",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    },
+    {
+      "id": 115,
+      "content": "cycling",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    },
+    {
+      "id": 116,
+      "content": "transit",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    },
+    {
+      "id": 117,
+      "content": "find_nearby",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    },
+    {
+      "id": 118,
+      "content": "category",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    },
+    {
+      "id": 119,
+      "content": "restaurant",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    },
+    {
+      "id": 120,
+      "content": "gas_station",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    },
+    {
+      "id": 121,
+      "content": "pharmacy",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    },
+    {
+      "id": 122,
+      "content": "hospital",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    },
+    {
+      "id": 123,
+      "content": "atm",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    },
+    {
+      "id": 124,
+      "content": "grocery",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    },
+    {
+      "id": 125,
+      "content": "coffee_shop",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    },
+    {
+      "id": 126,
+      "content": "parking",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    },
+    {
+      "id": 127,
+      "content": "hotel",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    },
+    {
+      "id": 128,
+      "content": "radius",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    },
+    {
+      "id": 129,
+      "content": "set_brightness",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    },
+    {
+      "id": 130,
+      "content": "toggle_wifi",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    },
+    {
+      "id": 131,
+      "content": "enabled",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    },
+    {
+      "id": 132,
+      "content": "toggle_bluetooth",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    },
+    {
+      "id": 133,
+      "content": "take_screenshot",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    },
+    {
+      "id": 134,
+      "content": "save_path",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    },
+    {
+      "id": 135,
+      "content": "search_web",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    },
+    {
+      "id": 136,
+      "content": "num_results",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    },
+    {
+      "id": 137,
+      "content": "translate_text",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    },
+    {
+      "id": 138,
+      "content": "text",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    },
+    {
+      "id": 139,
+      "content": "source_language",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    },
+    {
+      "id": 140,
+      "content": "target_language",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    }
+  ],
+  "normalizer": {
+    "type": "Sequence",
+    "normalizers": [
+      {
+        "type": "NFD"
+      },
+      {
+        "type": "StripAccents"
+      },
+      {
+        "type": "Lowercase"
+      }
+    ]
+  },
+  "pre_tokenizer": {
+    "type": "ByteLevel",
+    "add_prefix_space": false,
+    "trim_offsets": true,
+    "use_regex": true
+  },
+  "post_processor": {
+    "type": "TemplateProcessing",
+    "single": [
+      {
+        "SpecialToken": {
+          "id": "[BOS]",
+          "type_id": 0
+        }
+      },
+      {
+        "Sequence": {
+          "id": "A",
+          "type_id": 0
+        }
+      },
+      {
+        "SpecialToken": {
+          "id": "[EOS]",
+          "type_id": 0
+        }
+      }
+    ],
+    "pair": [
+      {
+        "SpecialToken": {
+          "id": "[BOS]",
+          "type_id": 0
+        }
+      },
+      {
+        "Sequence": {
+          "id": "A",
+          "type_id": 0
+        }
+      },
+      {
+        "SpecialToken": {
+          "id": "[EOS]",
+          "type_id": 0
+        }
+      },
+      {
+        "SpecialToken": {
+          "id": "[BOS]",
+          "type_id": 1
+        }
+      },
+      {
+        "Sequence": {
+          "id": "B",
+          "type_id": 1
+        }
+      },
+      {
+        "SpecialToken": {
+          "id": "[EOS]",
+          "type_id": 1
+        }
+      }
+    ],
+    "special_tokens": {
+      "[BOS]": {
+        "id": "[BOS]",
+        "ids": [
+          1
+        ],
+        "tokens": [
+          "[BOS]"
+        ]
+      },
+      "[EOS]": {
+        "id": "[EOS]",
+        "ids": [
+          2
+        ],
+        "tokens": [
+          "[EOS]"
+        ]
+      }
+    }
+  },
+  "decoder": {
+    "type": "ByteLevel",
+    "add_prefix_space": true,
+    "trim_offsets": true,
+    "use_regex": true
+  },
+  "model": {
+    "type": "BPE",
+    "dropout": null,
+    "unk_token": "[PAD]",
+    "continuing_subword_prefix": null,
+    "end_of_word_suffix": null,
+    "fuse_unk": false,
+    "byte_fallback": false,
+    "ignore_merges": false,
+    "vocab": {
+      "[PAD]": 0,
+      "[BOS]": 1,
+      "[EOS]": 2,
+      "[TOOL_START]": 3,
+      "[TOOL_END]": 4,
+      "[ARG_START]": 5,
+      "[ARG_END]": 6,
+      "[CONF]": 7,
+      "[SEP]": 8,
+      "[EMPTY]": 9,
+      "turn_on_lights": 10,
+      "room": 11,
+      "string": 12,
+      "living_room": 13,
+      "bedroom": 14,
+      "kitchen": 15,
+      "bathroom": 16,
+      "hallway": 17,
+      "garage": 18,
+      "office": 19,
+      "dining_room": 20,
+      "patio": 21,
+      "brightness": 22,
+      "integer": 23,
+      "color": 24,
+      "white": 25,
+      "warm_white": 26,
+      "cool_white": 27,
+      "red": 28,
+      "blue": 29,
+      "green": 30,
+      "yellow": 31,
+      "purple": 32,
+      "orange": 33,
+      "turn_off_lights": 34,
+      "set_thermostat": 35,
+      "temperature": 36,
+      "number": 37,
+      "unit": 38,
+      "celsius": 39,
+      "fahrenheit": 40,
+      "mode": 41,
+      "heat": 42,
+      "cool": 43,
+      "auto": 44,
+      "off": 45,
+      "lock_door": 46,
+      "door": 47,
+      "front_door": 48,
+      "back_door": 49,
+      "garage_door": 50,
+      "side_door": 51,
+      "action": 52,
+      "lock": 53,
+      "unlock": 54,
+      "set_blinds": 55,
+      "position": 56,
+      "play_music": 57,
+      "query": 58,
+      "source": 59,
+      "spotify": 60,
+      "apple_music": 61,
+      "youtube_music": 62,
+      "local": 63,
+      "radio": 64,
+      "device": 65,
+      "speaker": 66,
+      "headphones": 67,
+      "tv": 68,
+      "all": 69,
+      "shuffle": 70,
+      "boolean": 71,
+      "pause_media": 72,
+      "skip_track": 73,
+      "direction": 74,
+      "next": 75,
+      "previous": 76,
+      "set_volume": 77,
+      "level": 78,
+      "send_message": 79,
+      "contact": 80,
+      "message": 81,
+      "app": 82,
+      "sms": 83,
+      "whatsapp": 84,
+      "telegram": 85,
+      "signal": 86,
+      "make_call": 87,
+      "video": 88,
+      "set_timer": 89,
+      "duration": 90,
+      "label": 91,
+      "set_alarm": 92,
+      "time": 93,
+      "repeat": 94,
+      "once": 95,
+      "daily": 96,
+      "weekdays": 97,
+      "weekends": 98,
+      "create_reminder": 99,
+      "location": 100,
+      "add_calendar_event": 101,
+      "title": 102,
+      "start_time": 103,
+      "end_time": 104,
+      "attendees": 105,
+      "array": 106,
+      "get_weather": 107,
+      "get_forecast": 108,
+      "days": 109,
+      "get_directions": 110,
+      "origin": 111,
+      "destination": 112,
+      "driving": 113,
+      "walking": 114,
+      "cycling": 115,
+      "transit": 116,
+      "find_nearby": 117,
+      "category": 118,
+      "restaurant": 119,
+      "gas_station": 120,
+      "pharmacy": 121,
+      "hospital": 122,
+      "atm": 123,
+      "grocery": 124,
+      "coffee_shop": 125,
+      "parking": 126,
+      "hotel": 127,
+      "radius": 128,
+      "set_brightness": 129,
+      "toggle_wifi": 130,
+      "enabled": 131,
+      "toggle_bluetooth": 132,
+      "take_screenshot": 133,
+      "save_path": 134,
+      "search_web": 135,
+      "num_results": 136,
+      "translate_text": 137,
+      "text": 138,
+      "source_language": 139,
+      "target_language": 140,
+      "\"": 141,
+      "'": 142,
+      "(": 143,
+      ")": 144,
+      ",": 145,
+      "-": 146,
+      ".": 147,
+      "0": 148,
+      "1": 149,
+      "2": 150,
+      "4": 151,
+      "5": 152,
+      "6": 153,
+      "7": 154,
+      "8": 155,
+      "9": 156,
+      ":": 157,
+      "<": 158,
+      "=": 159,
+      ">": 160,
+      "[": 161,
+      "]": 162,
+      "_": 163,
+      "a": 164,
+      "b": 165,
+      "c": 166,
+      "d": 167,
+      "e": 168,
+      "f": 169,
+      "g": 170,
+      "h": 171,
+      "i": 172,
+      "j": 173,
+      "k": 174,
+      "l": 175,
+      "m": 176,
+      "n": 177,
+      "o": 178,
+      "p": 179,
+      "q": 180,
+      "r": 181,
+      "s": 182,
+      "t": 183,
+      "u": 184,
+      "v": 185,
+      "w": 186,
+      "x": 187,
+      "y": 188,
+      "{": 189,
+      "}": 190,
+      "Ġ": 191,
+      "Ġ[": 192,
+      "ar": 193,
+      "en": 194,
+      "st": 195,
+      "on": 196,
+      "Ġt": 197,
+      "Ġ\"": 198,
+      "oo": 199,
+      "er": 200,
+      "in": 201,
+      "at": 202,
+      "end": 203,
+      "se": 204,
+      "le": 205,
+      "\":": 206,
+      "art": 207,
+      "os": 208,
+      "too": 209,
+      "arg": 210,
+      "start": 211,
+      "tool": 212,
+      "re": 213,
+      "ion": 214,
+      "me": 215,
+      "or": 216,
+      ">\"": 217,
+      "Ġ\"<": 218,
+      "con": 219,
+      "ex": 220,
+      "ing": 221,
+      "mp": 222,
+      "lo": 223,
+      "qu": 224,
+      "Ġa": 225,
+      "Ġto": 226,
+      "ery": 227,
+      "de": 228,
+      "he": 229,
+      "Ġ0": 230,
+      "loc": 231,
+      "ge": 232,
+      "ur": 233,
+      "Ġquery": 234,
+      "ation": 235,
+      ">\",": 236,
+      "95": 237,
+      "amp": 238,
+      "bos": 239,
+      "eos": 240,
+      "{\"": 241,
+      "Ġex": 242,
+      "Ġ{\"": 243,
+      "sep": 244,
+      "conf": 245,
+      "ample": 246,
+      "Ġexample": 247,
+      "ce": 248,
+      "la": 249,
+      "ring": 250,
+      "Ġs": 251,
+      "Ġor": 252,
+      "Ġthe": 253,
+      "Ġf": 254,
+      "Ġp": 255,
+      "Ġc": 256,
+      "it": 257,
+      "ig": 258,
+      "ss": 259,
+      "age": 260,
+      "Ġse": 261,
+      "vi": 262,
+      "ac": 263,
+      "el": 264,
+      "ht": 265,
+      "Ġn": 266,
+      "Ġo": 267,
+      "ent": 268,
+      "ight": 269,
+      "di": 270,
+      "roo": 271,
+      "ind": 272,
+      "al": 273,
+      "ime": 274,
+      ">\"}": 275,
+      "\"}": 276,
+      "her": 277,
+      "un": 278,
+      "ate": 279,
+      "Ġset": 280,
+      "vice": 281,
+      "pe": 282,
+      "us": 283,
+      "Ġw": 284,
+      "Ġin": 285,
+      "rec": 286,
+      "mess": 287,
+      "cont": 288,
+      "ak": 289,
+      "an": 290,
+      "ger": 291,
+      "mo": 292,
+      "ne": 293,
+      "ol": 294,
+      "te": 295,
+      "tion": 296,
+      "Ġb": 297,
+      "oor": 298,
+      "Ġpla": 299,
+      "Ġof": 300,
+      "ab": 301,
+      "ic": 302,
+      "vel": 303,
+      "Ġlocation": 304,
+      "Ġtr": 305,
+      "ext": 306,
+      "get": 307,
+      "urn": 308,
+      "Ġfor": 309,
+      "able": 310,
+      "ame": 311,
+      "li": 312,
+      "right": 313,
+      "inte": 314,
+      "Ġname": 315,
+      "ness": 316,
+      "Ġplay": 317,
+      "rightness": 318,
+      "\",": 319,
+      "au": 320,
+      "cre": 321,
+      "ev": 322,
+      "gu": 323,
+      "if": 324,
+      "light": 325,
+      "ngu": 326,
+      "ot": 327,
+      "our": 328,
+      "um": 329,
+      "ure": 330,
+      "Ġ(": 331,
+      "Ġon": 332,
+      "Ġre": 333,
+      "Ġcont": 334,
+      "enable": 335,
+      "erat": 336,
+      "mperat": 337,
+      "langu": 338,
+      "act": 339,
+      "ake": 340,
+      "event": 341,
+      "mperature": 342,
+      "language": 343,
+      "bel": 344,
+      "ch": 345,
+      "om": 346,
+      "sh": 347,
+      "ue": 348,
+      "Ġget": 349,
+      "arch": 350,
+      "Ġturn": 351,
+      "set": 352,
+      "Ġcur": 353,
+      "direc": 354,
+      "creen": 355,
+      "lights": 356,
+      "ource": 357,
+      "ay": 358,
+      "boo": 359,
+      "ber": 360,
+      "emperature": 361,
+      "ff": 362,
+      "im": 363,
+      "ip": 364,
+      "lind": 365,
+      "mind": 366,
+      "rent": 367,
+      "rom": 368,
+      "to": 369,
+      "ts": 370,
+      "Ġroom": 371,
+      "Ġdevice": 372,
+      "Ġm": 373,
+      "Ġar": 374,
+      "Ġevent": 375,
+      "arm": 376,
+      "Ġtime": 377,
+      "Ġtemperature": 378,
+      "lean": 379,
+      "Ġan": 380,
+      "Ġfrom": 381,
+      "Ġsearch": 382,
+      "ack": 383,
+      "Ġop": 384,
+      "umber": 385,
+      "Ġcurrent": 386,
+      "imer": 387,
+      "minder": 388,
+      "Ġare": 389,
+      "00": 390,
+      "100": 391,
+      "ast": 392,
+      "cal": 393,
+      "cif": 394,
+      "day": 395,
+      "es": 396,
+      "et": 397,
+      "eat": 398,
+      "gg": 399,
+      "is": 400,
+      "kip": 401,
+      "ls": 402,
+      "late": 403,
+      "lue": 404,
+      "lts": 405,
+      "orec": 406,
+      "slate": 407,
+      "th": 408,
+      "ther": 409,
+      "ume": 410,
+      "ve": 411,
+      "ving": 412,
+      "vol": 413,
+      "Ġlock": 414,
+      "Ġlevel": 415,
+      "Ġmessage": 416,
+      "Ġ100": 417,
+      "osit": 418,
+      "tooth": 419,
+      "arget": 420,
+      "Ġspe": 421,
+      "Ġscreen": 422,
+      "Ġnumber": 423,
+      "usic": 424,
+      "anslate": 425,
+      "Ġbrightness": 426,
+      "list": 427,
+      "ause": 428,
+      "shot": 429,
+      "linds": 430,
+      "Ġarea": 431,
+      "cific": 432,
+      "eather": 433,
+      "ggle": 434,
+      "luetooth": 435,
+      "orecast": 436,
+      "volume": 437,
+      "osition": 438,
+      "Ġspecific": 439,
+      "directions": 440,
+      "')": 441,
+      "01": 442,
+      "601": 443,
+      "8601": 444,
+      "adi": 445,
+      "ave": 446,
+      "by": 447,
+      "dd": 448,
+      "dur": 449,
+      "eb": 450,
+      "hon": 451,
+      "ius": 452,
+      "larm": 453,
+      "mat": 454,
+      "pp": 455,
+      "rol": 456,
+      "radi": 457,
+      "su": 458,
+      "spe": 459,
+      "tr": 460,
+      "tend": 461,
+      "turn": 462,
+      "uff": 463,
+      "Ġunit": 464,
+      "Ġmode": 465,
+      "Ġdoor": 466,
+      "Ġ'": 467,
+      "Ġh": 468,
+      "Ġat": 469,
+      "Ġenable": 470,
+      "Ġlanguage": 471,
+      "Ġ8601": 472,
+      "arby": 473,
+      "stin": 474,
+      "stat": 475,
+      "Ġtext": 476,
+      "Ġtimer": 477,
+      "ath": 478,
+      "endar": 479,
+      "medi": 480,
+      "Ġalarm": 481,
+      "deo": 482,
+      "destin": 483,
+      "cels": 484,
+      "Ġskip": 485,
+      "Ġfind": 486,
+      "Ġpause": 487,
+      "Ġphon": 488,
+      "Ġco": 489,
+      "Ġcal": 490,
+      "itle": 491,
+      "peat": 492,
+      "aker": 493,
+      "mostat": 494,
+      "olor": 495,
+      "Ġoff": 496,
+      "Ġtranslate": 497,
+      "Ġformat": 498,
+      "living": 499,
+      "Ġplaylist": 500,
+      "Ġreminder": 501,
+      "Ġcontact": 502,
+      "Ġcontrol": 503,
+      "Ġmake": 504,
+      "Ġopen": 505,
+      "iso": 506,
+      "sults": 507,
+      "tende": 508,
+      "uffle": 509,
+      "media": 510,
+      "Ġphone": 511,
+      "back": 512,
+      "blinds": 513,
+      "bluetooth": 514,
+      "cate": 515,
+      "din": 516,
+      "fi": 517,
+      "forecast": 518,
+      "gen": 519,
+      "gor": 520,
+      "ist": 521,
+      "ly": 522,
+      "mart": 523,
+      "music": 524,
+      "num": 525,
+      "path": 526,
+      "sable": 527,
+      "screen": 528,
+      "save": 529,
+      "ter": 530,
+      "timer": 531,
+      "target": 532,
+      "wif": 533,
+      "weather": 534,
+      "web": 535,
+      "Ġlabel": 536,
+      "Ġdays": 537,
+      "Ġu": 538,
+      "Ġart": 539,
+      "Ġstart": 540,
+      "Ġdi": 541,
+      "Ġun": 542,
+      "Ġlights": 543,
+      "Ġvolume": 544,
+      "Ġiso": 545,
+      "Ġgen": 546,
+      "ong": 547,
+      "Ġtake": 548,
+      "Ġtarget": 549,
+      "attende": 550,
+      "sed": 551,
+      "reate": 552,
+      "reminder": 553,
+      "results": 554,
+      "orig": 555,
+      "Ġadd": 556,
+      "Ġtoggle": 557,
+      "hether": 558,
+      "Ġsend": 559,
+      "Ġsource": 560,
+      "Ġsmart": 561,
+      "Ġsong": 562,
+      "Ġfal": 563,
+      "Ġforecast": 564,
+      "Ġposition": 565,
+      "Ġcit": 566,
+      "Ġcoor": 567,
+      "Ġcreate": 568,
+      "igger": 569,
+      "Ġne": 570,
+      "alarm": 571,
+      "ates": 572,
+      "Ġwh": 573,
+      "Ġwi": 574,
+      "Ġweather": 575,
+      "Ġwhether": 576,
+      "nearby": 577,
+      "tional": 578,
+      "Ġblinds": 579,
+      "Ġbluetooth": 580,
+      "Ġplace": 581,
+      "Ġtrue": 582,
+      "Ġtrigger": 583,
+      "Ġplayback": 584,
+      "other": 585,
+      "Ġone": 586,
+      "toggle": 587,
+      "Ġmusic": 588,
+      "Ġanother": 589,
+      "Ġoptional": 590,
+      "call": 591,
+      "calendar": 592,
+      "thermostat": 593,
+      "Ġscreenshot": 594,
+      "track": 595,
+      "Ġcode": 596,
+      "Ġcall": 597,
+      "categor": 598,
+      "dinates": 599,
+      "screenshot": 600,
+      "wifi": 601,
+      "Ġartist": 602,
+      "Ġdisable": 603,
+      "Ġunlock": 604,
+      "Ġgenre": 605,
+      "Ġfalse": 606,
+      "Ġcity": 607,
+      "Ġcoordinates": 608
+    },
+    "merges": [
+      [
+        "Ġ",
+        "["
+      ],
+      [
+        "a",
+        "r"
+      ],
+      [
+        "e",
+        "n"
+      ],
+      [
+        "s",
+        "t"
+      ],
+      [
+        "o",
+        "n"
+      ],
+      [
+        "Ġ",
+        "t"
+      ],
+      [
+        "Ġ",
+        "\""
+      ],
+      [
+        "o",
+        "o"
+      ],
+      [
+        "e",
+        "r"
+      ],
+      [
+        "i",
+        "n"
+      ],
+      [
+        "a",
+        "t"
+      ],
+      [
+        "en",
+        "d"
+      ],
+      [
+        "s",
+        "e"
+      ],
+      [
+        "l",
+        "e"
+      ],
+      [
+        "\"",
+        ":"
+      ],
+      [
+        "ar",
+        "t"
+      ],
+      [
+        "o",
+        "s"
+      ],
+      [
+        "t",
+        "oo"
+      ],
+      [
+        "ar",
+        "g"
+      ],
+      [
+        "st",
+        "art"
+      ],
+      [
+        "too",
+        "l"
+      ],
+      [
+        "r",
+        "e"
+      ],
+      [
+        "i",
+        "on"
+      ],
+      [
+        "m",
+        "e"
+      ],
+      [
+        "o",
+        "r"
+      ],
+      [
+        ">",
+        "\""
+      ],
+      [
+        "Ġ\"",
+        "<"
+      ],
+      [
+        "c",
+        "on"
+      ],
+      [
+        "e",
+        "x"
+      ],
+      [
+        "in",
+        "g"
+      ],
+      [
+        "m",
+        "p"
+      ],
+      [
+        "l",
+        "o"
+      ],
+      [
+        "q",
+        "u"
+      ],
+      [
+        "Ġ",
+        "a"
+      ],
+      [
+        "Ġt",
+        "o"
+      ],
+      [
+        "er",
+        "y"
+      ],
+      [
+        "qu",
+        "ery"
+      ],
+      [
+        "d",
+        "e"
+      ],
+      [
+        "h",
+        "e"
+      ],
+      [
+        "Ġ",
+        "0"
+      ],
+      [
+        "lo",
+        "c"
+      ],
+      [
+        "g",
+        "e"
+      ],
+      [
+        "u",
+        "r"
+      ],
+      [
+        "Ġ",
+        "query"
+      ],
+      [
+        "at",
+        "ion"
+      ],
+      [
+        ">\"",
+        ","
+      ],
+      [
+        "9",
+        "5"
+      ],
+      [
+        "a",
+        "mp"
+      ],
+      [
+        "b",
+        "os"
+      ],
+      [
+        "e",
+        "os"
+      ],
+      [
+        "{",
+        "\""
+      ],
+      [
+        "Ġ",
+        "ex"
+      ],
+      [
+        "Ġ",
+        "{\""
+      ],
+      [
+        "se",
+        "p"
+      ],
+      [
+        "con",
+        "f"
+      ],
+      [
+        "amp",
+        "le"
+      ],
+      [
+        "Ġex",
+        "ample"
+      ],
+      [
+        "c",
+        "e"
+      ],
+      [
+        "l",
+        "a"
+      ],
+      [
+        "r",
+        "ing"
+      ],
+      [
+        "st",
+        "ring"
+      ],
+      [
+        "Ġ",
+        "s"
+      ],
+      [
+        "Ġ",
+        "or"
+      ],
+      [
+        "Ġt",
+        "he"
+      ],
+      [
+        "Ġ",
+        "f"
+      ],
+      [
+        "Ġ",
+        "p"
+      ],
+      [
+        "Ġ",
+        "c"
+      ],
+      [
+        "i",
+        "t"
+      ],
+      [
+        "i",
+        "g"
+      ],
+      [
+        "s",
+        "s"
+      ],
+      [
+        "loc",
+        "ation"
+      ],
+      [
+        "a",
+        "ge"
+      ],
+      [
+        "Ġ",
+        "se"
+      ],
+      [
+        "v",
+        "i"
+      ],
+      [
+        "a",
+        "c"
+      ],
+      [
+        "e",
+        "l"
+      ],
+      [
+        "h",
+        "t"
+      ],
+      [
+        "Ġ",
+        "n"
+      ],
+      [
+        "Ġ",
+        "o"
+      ],
+      [
+        "en",
+        "t"
+      ],
+      [
+        "ig",
+        "ht"
+      ],
+      [
+        "d",
+        "i"
+      ],
+      [
+        "r",
+        "oo"
+      ],
+      [
+        "in",
+        "d"
+      ],
+      [
+        "roo",
+        "m"
+      ],
+      [
+        "a",
+        "l"
+      ],
+      [
+        "i",
+        "me"
+      ],
+      [
+        ">\"",
+        "}"
+      ],
+      [
+        "\"",
+        "}"
+      ],
+      [
+        "h",
+        "er"
+      ],
+      [
+        "u",
+        "n"
+      ],
+      [
+        "at",
+        "e"
+      ],
+      [
+        "Ġse",
+        "t"
+      ],
+      [
+        "vi",
+        "ce"
+      ],
+      [
+        "p",
+        "e"
+      ],
+      [
+        "u",
+        "s"
+      ],
+      [
+        "Ġ",
+        "w"
+      ],
+      [
+        "Ġ",
+        "in"
+      ],
+      [
+        "re",
+        "c"
+      ],
+      [
+        "me",
+        "ss"
+      ],
+      [
+        "con",
+        "t"
+      ],
+      [
+        "de",
+        "vice"
+      ],
+      [
+        "a",
+        "k"
+      ],
+      [
+        "a",
+        "n"
+      ],
+      [
+        "g",
+        "er"
+      ],
+      [
+        "m",
+        "o"
+      ],
+      [
+        "n",
+        "e"
+      ],
+      [
+        "o",
+        "l"
+      ],
+      [
+        "t",
+        "e"
+      ],
+      [
+        "t",
+        "ion"
+      ],
+      [
+        "Ġ",
+        "b"
+      ],
+      [
+        "oo",
+        "r"
+      ],
+      [
+        "Ġp",
+        "la"
+      ],
+      [
+        "Ġo",
+        "f"
+      ],
+      [
+        "mess",
+        "age"
+      ],
+      [
+        "a",
+        "b"
+      ],
+      [
+        "i",
+        "c"
+      ],
+      [
+        "v",
+        "el"
+      ],
+      [
+        "Ġ",
+        "location"
+      ],
+      [
+        "Ġt",
+        "r"
+      ],
+      [
+        "ex",
+        "t"
+      ],
+      [
+        "ge",
+        "t"
+      ],
+      [
+        "ur",
+        "n"
+      ],
+      [
+        "Ġf",
+        "or"
+      ],
+      [
+        "un",
+        "it"
+      ],
+      [
+        "ab",
+        "le"
+      ],
+      [
+        "a",
+        "me"
+      ],
+      [
+        "d",
+        "oor"
+      ],
+      [
+        "l",
+        "i"
+      ],
+      [
+        "r",
+        "ight"
+      ],
+      [
+        "t",
+        "ime"
+      ],
+      [
+        "in",
+        "te"
+      ],
+      [
+        "le",
+        "vel"
+      ],
+      [
+        "loc",
+        "k"
+      ],
+      [
+        "Ġn",
+        "ame"
+      ],
+      [
+        "ne",
+        "ss"
+      ],
+      [
+        "Ġpla",
+        "y"
+      ],
+      [
+        "right",
+        "ness"
+      ],
+      [
+        "inte",
+        "ger"
+      ],
+      [
+        "\"",
+        ","
+      ],
+      [
+        "a",
+        "u"
+      ],
+      [
+        "c",
+        "re"
+      ],
+      [
+        "e",
+        "v"
+      ],
+      [
+        "g",
+        "u"
+      ],
+      [
+        "i",
+        "f"
+      ],
+      [
+        "l",
+        "ight"
+      ],
+      [
+        "n",
+        "gu"
+      ],
+      [
+        "o",
+        "t"
+      ],
+      [
+        "o",
+        "ur"
+      ],
+      [
+        "u",
+        "m"
+      ],
+      [
+        "u",
+        "re"
+      ],
+      [
+        "Ġ",
+        "("
+      ],
+      [
+        "Ġ",
+        "on"
+      ],
+      [
+        "Ġ",
+        "re"
+      ],
+      [
+        "Ġ",
+        "cont"
+      ],
+      [
+        "en",
+        "able"
+      ],
+      [
+        "er",
+        "at"
+      ],
+      [
+        "mp",
+        "erat"
+      ],
+      [
+        "la",
+        "ngu"
+      ],
+      [
+        "ac",
+        "t"
+      ],
+      [
+        "ak",
+        "e"
+      ],
+      [
+        "mo",
+        "de"
+      ],
+      [
+        "ev",
+        "ent"
+      ],
+      [
+        "mperat",
+        "ure"
+      ],
+      [
+        "langu",
+        "age"
+      ],
+      [
+        "b",
+        "el"
+      ],
+      [
+        "c",
+        "h"
+      ],
+      [
+        "o",
+        "m"
+      ],
+      [
+        "s",
+        "h"
+      ],
+      [
+        "u",
+        "e"
+      ],
+      [
+        "Ġ",
+        "get"
+      ],
+      [
+        "ar",
+        "ch"
+      ],
+      [
+        "Ġt",
+        "urn"
+      ],
+      [
+        "se",
+        "t"
+      ],
+      [
+        "la",
+        "bel"
+      ],
+      [
+        "Ġc",
+        "ur"
+      ],
+      [
+        "di",
+        "rec"
+      ],
+      [
+        "cre",
+        "en"
+      ],
+      [
+        "light",
+        "s"
+      ],
+      [
+        "our",
+        "ce"
+      ],
+      [
+        "direc",
+        "tion"
+      ],
+      [
+        "a",
+        "y"
+      ],
+      [
+        "b",
+        "oo"
+      ],
+      [
+        "b",
+        "er"
+      ],
+      [
+        "e",
+        "mperature"
+      ],
+      [
+        "f",
+        "f"
+      ],
+      [
+        "i",
+        "m"
+      ],
+      [
+        "i",
+        "p"
+      ],
+      [
+        "l",
+        "ind"
+      ],
+      [
+        "m",
+        "ind"
+      ],
+      [
+        "r",
+        "ent"
+      ],
+      [
+        "r",
+        "om"
+      ],
+      [
+        "t",
+        "o"
+      ],
+      [
+        "t",
+        "s"
+      ],
+      [
+        "Ġ",
+        "room"
+      ],
+      [
+        "Ġ",
+        "device"
+      ],
+      [
+        "Ġ",
+        "m"
+      ],
+      [
+        "Ġ",
+        "ar"
+      ],
+      [
+        "Ġ",
+        "event"
+      ],
+      [
+        "ar",
+        "m"
+      ],
+      [
+        "Ġt",
+        "ime"
+      ],
+      [
+        "Ġt",
+        "emperature"
+      ],
+      [
+        "le",
+        "an"
+      ],
+      [
+        "Ġa",
+        "n"
+      ],
+      [
+        "Ġf",
+        "rom"
+      ],
+      [
+        "Ġse",
+        "arch"
+      ],
+      [
+        "ac",
+        "k"
+      ],
+      [
+        "Ġo",
+        "p"
+      ],
+      [
+        "um",
+        "ber"
+      ],
+      [
+        "Ġcur",
+        "rent"
+      ],
+      [
+        "boo",
+        "lean"
+      ],
+      [
+        "im",
+        "er"
+      ],
+      [
+        "mind",
+        "er"
+      ],
+      [
+        "Ġar",
+        "e"
+      ],
+      [
+        "0",
+        "0"
+      ],
+      [
+        "1",
+        "00"
+      ],
+      [
+        "a",
+        "st"
+      ],
+      [
+        "b",
+        "rightness"
+      ],
+      [
+        "c",
+        "al"
+      ],
+      [
+        "c",
+        "if"
+      ],
+      [
+        "d",
+        "ay"
+      ],
+      [
+        "e",
+        "s"
+      ],
+      [
+        "e",
+        "t"
+      ],
+      [
+        "e",
+        "at"
+      ],
+      [
+        "g",
+        "g"
+      ],
+      [
+        "i",
+        "s"
+      ],
+      [
+        "k",
+        "ip"
+      ],
+      [
+        "l",
+        "s"
+      ],
+      [
+        "l",
+        "ate"
+      ],
+      [
+        "l",
+        "ue"
+      ],
+      [
+        "l",
+        "ts"
+      ],
+      [
+        "o",
+        "rec"
+      ],
+      [
+        "s",
+        "ource"
+      ],
+      [
+        "s",
+        "late"
+      ],
+      [
+        "t",
+        "h"
+      ],
+      [
+        "t",
+        "her"
+      ],
+      [
+        "t",
+        "ext"
+      ],
+      [
+        "u",
+        "me"
+      ],
+      [
+        "v",
+        "e"
+      ],
+      [
+        "v",
+        "ing"
+      ],
+      [
+        "v",
+        "ol"
+      ],
+      [
+        "Ġ",
+        "lock"
+      ],
+      [
+        "Ġ",
+        "level"
+      ],
+      [
+        "Ġ",
+        "message"
+      ],
+      [
+        "Ġ",
+        "100"
+      ],
+      [
+        "os",
+        "it"
+      ],
+      [
+        "too",
+        "th"
+      ],
+      [
+        "arg",
+        "et"
+      ],
+      [
+        "Ġs",
+        "pe"
+      ],
+      [
+        "Ġs",
+        "creen"
+      ],
+      [
+        "Ġn",
+        "umber"
+      ],
+      [
+        "us",
+        "ic"
+      ],
+      [
+        "cont",
+        "act"
+      ],
+      [
+        "an",
+        "slate"
+      ],
+      [
+        "Ġb",
+        "rightness"
+      ],
+      [
+        "li",
+        "st"
+      ],
+      [
+        "au",
+        "se"
+      ],
+      [
+        "enable",
+        "d"
+      ],
+      [
+        "sh",
+        "ot"
+      ],
+      [
+        "lind",
+        "s"
+      ],
+      [
+        "Ġare",
+        "a"
+      ],
+      [
+        "cif",
+        "ic"
+      ],
+      [
+        "day",
+        "s"
+      ],
+      [
+        "eat",
+        "her"
+      ],
+      [
+        "gg",
+        "le"
+      ],
+      [
+        "lue",
+        "tooth"
+      ],
+      [
+        "orec",
+        "ast"
+      ],
+      [
+        "vol",
+        "ume"
+      ],
+      [
+        "osit",
+        "ion"
+      ],
+      [
+        "Ġspe",
+        "cific"
+      ],
+      [
+        "direction",
+        "s"
+      ],
+      [
+        "'",
+        ")"
+      ],
+      [
+        "0",
+        "1"
+      ],
+      [
+        "6",
+        "01"
+      ],
+      [
+        "8",
+        "601"
+      ],
+      [
+        "a",
+        "di"
+      ],
+      [
+        "a",
+        "ve"
+      ],
+      [
+        "b",
+        "y"
+      ],
+      [
+        "d",
+        "d"
+      ],
+      [
+        "d",
+        "ur"
+      ],
+      [
+        "e",
+        "b"
+      ],
+      [
+        "h",
+        "on"
+      ],
+      [
+        "i",
+        "us"
+      ],
+      [
+        "l",
+        "arm"
+      ],
+      [
+        "m",
+        "at"
+      ],
+      [
+        "p",
+        "p"
+      ],
+      [
+        "r",
+        "ol"
+      ],
+      [
+        "r",
+        "adi"
+      ],
+      [
+        "s",
+        "u"
+      ],
+      [
+        "s",
+        "pe"
+      ],
+      [
+        "t",
+        "r"
+      ],
+      [
+        "t",
+        "end"
+      ],
+      [
+        "t",
+        "urn"
+      ],
+      [
+        "u",
+        "ff"
+      ],
+      [
+        "Ġ",
+        "unit"
+      ],
+      [
+        "Ġ",
+        "mode"
+      ],
+      [
+        "Ġ",
+        "door"
+      ],
+      [
+        "Ġ",
+        "'"
+      ],
+      [
+        "Ġ",
+        "h"
+      ],
+      [
+        "Ġ",
+        "at"
+      ],
+      [
+        "Ġ",
+        "enable"
+      ],
+      [
+        "Ġ",
+        "language"
+      ],
+      [
+        "Ġ",
+        "8601"
+      ],
+      [
+        "ar",
+        "by"
+      ],
+      [
+        "st",
+        "in"
+      ],
+      [
+        "st",
+        "at"
+      ],
+      [
+        "Ġt",
+        "ext"
+      ],
+      [
+        "Ġt",
+        "imer"
+      ],
+      [
+        "at",
+        "h"
+      ],
+      [
+        "end",
+        "ar"
+      ],
+      [
+        "me",
+        "di"
+      ],
+      [
+        "Ġa",
+        "larm"
+      ],
+      [
+        "de",
+        "o"
+      ],
+      [
+        "de",
+        "stin"
+      ],
+      [
+        "ce",
+        "ls"
+      ],
+      [
+        "Ġs",
+        "kip"
+      ],
+      [
+        "Ġf",
+        "ind"
+      ],
+      [
+        "Ġp",
+        "ause"
+      ],
+      [
+        "Ġp",
+        "hon"
+      ],
+      [
+        "Ġc",
+        "o"
+      ],
+      [
+        "Ġc",
+        "al"
+      ],
+      [
+        "it",
+        "le"
+      ],
+      [
+        "vi",
+        "deo"
+      ],
+      [
+        "pe",
+        "at"
+      ],
+      [
+        "ak",
+        "er"
+      ],
+      [
+        "mo",
+        "stat"
+      ],
+      [
+        "ol",
+        "or"
+      ],
+      [
+        "Ġof",
+        "f"
+      ],
+      [
+        "Ġtr",
+        "anslate"
+      ],
+      [
+        "Ġfor",
+        "mat"
+      ],
+      [
+        "li",
+        "ving"
+      ],
+      [
+        "Ġplay",
+        "list"
+      ],
+      [
+        "Ġre",
+        "minder"
+      ],
+      [
+        "Ġcont",
+        "act"
+      ],
+      [
+        "Ġcont",
+        "rol"
+      ],
+      [
+        "Ġm",
+        "ake"
+      ],
+      [
+        "Ġop",
+        "en"
+      ],
+      [
+        "is",
+        "o"
+      ],
+      [
+        "dur",
+        "ation"
+      ],
+      [
+        "radi",
+        "us"
+      ],
+      [
+        "su",
+        "lts"
+      ],
+      [
+        "spe",
+        "aker"
+      ],
+      [
+        "tend",
+        "e"
+      ],
+      [
+        "uff",
+        "le"
+      ],
+      [
+        "medi",
+        "a"
+      ],
+      [
+        "destin",
+        "ation"
+      ],
+      [
+        "cels",
+        "ius"
+      ],
+      [
+        "Ġphon",
+        "e"
+      ],
+      [
+        "a",
+        "pp"
+      ],
+      [
+        "b",
+        "ack"
+      ],
+      [
+        "b",
+        "linds"
+      ],
+      [
+        "b",
+        "luetooth"
+      ],
+      [
+        "c",
+        "ate"
+      ],
+      [
+        "c",
+        "olor"
+      ],
+      [
+        "d",
+        "in"
+      ],
+      [
+        "f",
+        "i"
+      ],
+      [
+        "f",
+        "orecast"
+      ],
+      [
+        "g",
+        "en"
+      ],
+      [
+        "g",
+        "or"
+      ],
+      [
+        "i",
+        "st"
+      ],
+      [
+        "l",
+        "y"
+      ],
+      [
+        "m",
+        "art"
+      ],
+      [
+        "m",
+        "usic"
+      ],
+      [
+        "n",
+        "um"
+      ],
+      [
+        "o",
+        "ff"
+      ],
+      [
+        "p",
+        "osition"
+      ],
+      [
+        "p",
+        "ath"
+      ],
+      [
+        "s",
+        "able"
+      ],
+      [
+        "s",
+        "creen"
+      ],
+      [
+        "s",
+        "ave"
+      ],
+      [
+        "t",
+        "er"
+      ],
+      [
+        "t",
+        "imer"
+      ],
+      [
+        "t",
+        "arget"
+      ],
+      [
+        "t",
+        "itle"
+      ],
+      [
+        "w",
+        "if"
+      ],
+      [
+        "w",
+        "eather"
+      ],
+      [
+        "w",
+        "eb"
+      ],
+      [
+        "Ġ",
+        "label"
+      ],
+      [
+        "Ġ",
+        "days"
+      ],
+      [
+        "Ġ",
+        "u"
+      ],
+      [
+        "Ġ",
+        "art"
+      ],
+      [
+        "Ġ",
+        "start"
+      ],
+      [
+        "Ġ",
+        "di"
+      ],
+      [
+        "Ġ",
+        "un"
+      ],
+      [
+        "Ġ",
+        "lights"
+      ],
+      [
+        "Ġ",
+        "volume"
+      ],
+      [
+        "Ġ",
+        "iso"
+      ],
+      [
+        "Ġ",
+        "gen"
+      ],
+      [
+        "on",
+        "g"
+      ],
+      [
+        "Ġt",
+        "ake"
+      ],
+      [
+        "Ġt",
+        "arget"
+      ],
+      [
+        "at",
+        "tende"
+      ],
+      [
+        "se",
+        "d"
+      ],
+      [
+        "re",
+        "ate"
+      ],
+      [
+        "re",
+        "minder"
+      ],
+      [
+        "re",
+        "peat"
+      ],
+      [
+        "re",
+        "sults"
+      ],
+      [
+        "or",
+        "ig"
+      ],
+      [
+        "Ġa",
+        "dd"
+      ],
+      [
+        "Ġto",
+        "ggle"
+      ],
+      [
+        "he",
+        "at"
+      ],
+      [
+        "he",
+        "ther"
+      ],
+      [
+        "Ġs",
+        "end"
+      ],
+      [
+        "Ġs",
+        "ource"
+      ],
+      [
+        "Ġs",
+        "mart"
+      ],
+      [
+        "Ġs",
+        "ong"
+      ],
+      [
+        "Ġf",
+        "al"
+      ],
+      [
+        "Ġf",
+        "orecast"
+      ],
+      [
+        "Ġp",
+        "osition"
+      ],
+      [
+        "Ġc",
+        "it"
+      ],
+      [
+        "Ġc",
+        "oor"
+      ],
+      [
+        "Ġc",
+        "reate"
+      ],
+      [
+        "ig",
+        "ger"
+      ],
+      [
+        "ac",
+        "tion"
+      ],
+      [
+        "Ġn",
+        "e"
+      ],
+      [
+        "al",
+        "arm"
+      ],
+      [
+        "ate",
+        "s"
+      ],
+      [
+        "Ġw",
+        "h"
+      ],
+      [
+        "Ġw",
+        "i"
+      ],
+      [
+        "Ġw",
+        "eather"
+      ],
+      [
+        "Ġw",
+        "hether"
+      ],
+      [
+        "ne",
+        "arby"
+      ],
+      [
+        "te",
+        "mperature"
+      ],
+      [
+        "tion",
+        "al"
+      ],
+      [
+        "Ġb",
+        "linds"
+      ],
+      [
+        "Ġb",
+        "luetooth"
+      ],
+      [
+        "Ġpla",
+        "ce"
+      ],
+      [
+        "Ġtr",
+        "ue"
+      ],
+      [
+        "Ġtr",
+        "igger"
+      ],
+      [
+        "Ġplay",
+        "back"
+      ],
+      [
+        "au",
+        "to"
+      ],
+      [
+        "ot",
+        "her"
+      ],
+      [
+        "Ġon",
+        "e"
+      ],
+      [
+        "sh",
+        "uffle"
+      ],
+      [
+        "to",
+        "ggle"
+      ],
+      [
+        "Ġm",
+        "usic"
+      ],
+      [
+        "Ġan",
+        "other"
+      ],
+      [
+        "Ġop",
+        "tional"
+      ],
+      [
+        "cal",
+        "l"
+      ],
+      [
+        "cal",
+        "endar"
+      ],
+      [
+        "ther",
+        "mostat"
+      ],
+      [
+        "Ġscreen",
+        "shot"
+      ],
+      [
+        "tr",
+        "ack"
+      ],
+      [
+        "Ġco",
+        "de"
+      ],
+      [
+        "Ġcal",
+        "l"
+      ],
+      [
+        "cate",
+        "gor"
+      ],
+      [
+        "din",
+        "ates"
+      ],
+      [
+        "screen",
+        "shot"
+      ],
+      [
+        "wif",
+        "i"
+      ],
+      [
+        "Ġart",
+        "ist"
+      ],
+      [
+        "Ġdi",
+        "sable"
+      ],
+      [
+        "Ġun",
+        "lock"
+      ],
+      [
+        "Ġgen",
+        "re"
+      ],
+      [
+        "attende",
+        "es"
+      ],
+      [
+        "orig",
+        "in"
+      ],
+      [
+        "Ġfal",
+        "se"
+      ],
+      [
+        "Ġcit",
+        "y"
+      ],
+      [
+        "Ġcoor",
+        "dinates"
+      ],
+      [
+        "categor",
+        "y"
+      ]
+    ]
+  }
+}

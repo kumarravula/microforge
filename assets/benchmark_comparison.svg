@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 380" font-family="'Segoe UI', system-ui, -apple-system, sans-serif">
+  <defs>
+    <linearGradient id="bg2" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0d1117"/>
+      <stop offset="100%" stop-color="#161b22"/>
+    </linearGradient>
+    <linearGradient id="n_bar" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0%" stop-color="#6366f1"/>
+      <stop offset="100%" stop-color="#a5b4fc"/>
+    </linearGradient>
+    <linearGradient id="m_bar" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0%" stop-color="#f97316"/>
+      <stop offset="100%" stop-color="#fdba74"/>
+    </linearGradient>
+    <filter id="glow2">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect width="700" height="380" fill="url(#bg2)" rx="12"/>
+
+  <!-- Title -->
+  <text x="350" y="38" text-anchor="middle" fill="#f0f6fc" font-size="18" font-weight="700">MicroForge vs Cactus Needle 3 — Head-to-Head</text>
+  <text x="350" y="56" text-anchor="middle" fill="#8b949e" font-size="11">DroidCall Benchmark • Higher is better (except Size &amp; Power)</text>
+
+  <!-- Legend -->
+  <rect x="240" y="68" width="12" height="12" fill="#818cf8" rx="2"/>
+  <text x="258" y="79" fill="#c9d1d9" font-size="11">Cactus Needle 3</text>
+  <rect x="380" y="68" width="12" height="12" fill="#f97316" rx="2"/>
+  <text x="398" y="79" fill="#c9d1d9" font-size="11">MicroForge (Ours)</text>
+
+  <!-- Metric labels on left -->
+  <text x="135" y="128" text-anchor="end" fill="#c9d1d9" font-size="12" font-weight="500">Model Size</text>
+  <text x="135" y="145" text-anchor="end" fill="#8b949e" font-size="9">(Lower = Better)</text>
+
+  <text x="135" y="188" text-anchor="end" fill="#c9d1d9" font-size="12" font-weight="500">Bits Per Weight</text>
+  <text x="135" y="205" text-anchor="end" fill="#8b949e" font-size="9">(Lower = Better)</text>
+
+  <text x="135" y="248" text-anchor="end" fill="#c9d1d9" font-size="12" font-weight="500">FP Multiplies</text>
+  <text x="135" y="265" text-anchor="end" fill="#8b949e" font-size="9">(Lower = Better)</text>
+
+  <text x="135" y="310" text-anchor="end" fill="#c9d1d9" font-size="12" font-weight="500">JSON Error Rate</text>
+  <text x="135" y="327" text-anchor="end" fill="#8b949e" font-size="9">(Lower = Better)</text>
+
+  <!-- Model Size bars -->
+  <!-- Needle: 29 MB → normalized to max width 450 at 29 MB -->
+  <rect x="150" y="118" width="450" height="18" fill="url(#n_bar)" rx="4" opacity="0.8"/>
+  <text x="610" y="131" fill="#a5b4fc" font-size="12" font-weight="600">29.0 MB</text>
+  <!-- MicroForge: 7.19 MB → 7.19/29*450 = 111.6 -->
+  <rect x="150" y="138" width="112" height="18" fill="url(#m_bar)" rx="4" opacity="0.9" filter="url(#glow2)"/>
+  <text x="270" y="151" fill="#fdba74" font-size="12" font-weight="700">7.19 MB  ✓ 75% smaller</text>
+
+  <!-- Bits Per Weight bars -->
+  <!-- Needle: 2.125 bpw → 2.125/2.5*450 = 382.5 -->
+  <rect x="150" y="178" width="383" height="18" fill="url(#n_bar)" rx="4" opacity="0.8"/>
+  <text x="543" y="191" fill="#a5b4fc" font-size="12" font-weight="600">2.125 bpw</text>
+  <!-- MicroForge: 1.58 bpw → 1.58/2.5*450 = 284.4 -->
+  <rect x="150" y="198" width="284" height="18" fill="url(#m_bar)" rx="4" opacity="0.9" filter="url(#glow2)"/>
+  <text x="444" y="211" fill="#fdba74" font-size="12" font-weight="700">1.58 bpw  ✓ 26% lower</text>
+
+  <!-- FP Multiplies bars -->
+  <!-- Needle: millions → full bar -->
+  <rect x="150" y="238" width="400" height="18" fill="url(#n_bar)" rx="4" opacity="0.8"/>
+  <text x="560" y="251" fill="#a5b4fc" font-size="12" font-weight="600">Millions</text>
+  <!-- MicroForge: 0 → tiny dot -->
+  <rect x="150" y="258" width="8" height="18" fill="url(#m_bar)" rx="4" opacity="0.9" filter="url(#glow2)"/>
+  <text x="168" y="271" fill="#fdba74" font-size="12" font-weight="700">ZERO  ✓ Pure ADD/SUB only</text>
+
+  <!-- JSON Error Rate bars -->
+  <!-- Needle: 0% → tiny dot -->
+  <rect x="150" y="300" width="8" height="18" fill="url(#n_bar)" rx="4" opacity="0.8"/>
+  <text x="168" y="313" fill="#a5b4fc" font-size="12" font-weight="600">0.0%</text>
+  <!-- MicroForge: 0% → tiny dot -->
+  <rect x="150" y="320" width="8" height="18" fill="url(#m_bar)" rx="4" opacity="0.9" filter="url(#glow2)"/>
+  <text x="168" y="333" fill="#fdba74" font-size="12" font-weight="700">0.0%  ✓ FSM Grammar Masking</text>
+
+  <!-- Footer -->
+  <text x="350" y="367" text-anchor="middle" fill="#484f58" font-size="9">Benchmarked on DroidCall (EMNLP 2024) — 1,074 test samples — 24 Android intent tools</text>
+</svg>

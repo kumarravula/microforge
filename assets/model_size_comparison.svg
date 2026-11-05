@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 380" font-family="'Segoe UI', system-ui, -apple-system, sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0d1117"/>
+      <stop offset="100%" stop-color="#161b22"/>
+    </linearGradient>
+    <linearGradient id="needle_grad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#6366f1"/>
+      <stop offset="100%" stop-color="#818cf8"/>
+    </linearGradient>
+    <linearGradient id="forge_grad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#f97316"/>
+      <stop offset="100%" stop-color="#fb923c"/>
+    </linearGradient>
+    <linearGradient id="gpt_grad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#22c55e"/>
+      <stop offset="100%" stop-color="#4ade80"/>
+    </linearGradient>
+    <linearGradient id="llama_grad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#ef4444"/>
+      <stop offset="100%" stop-color="#f87171"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="700" height="380" fill="url(#bg)" rx="12"/>
+
+  <!-- Title -->
+  <text x="350" y="38" text-anchor="middle" fill="#f0f6fc" font-size="18" font-weight="700">Model Size Comparison (MB)</text>
+  <text x="350" y="56" text-anchor="middle" fill="#8b949e" font-size="11">Lower is better • On-device tool-calling models</text>
+
+  <!-- Grid lines -->
+  <line x1="160" y1="80" x2="160" y2="320" stroke="#21262d" stroke-width="1"/>
+  <line x1="160" y1="320" x2="660" y2="320" stroke="#30363d" stroke-width="1"/>
+  <!-- Horizontal gridlines -->
+  <line x1="160" y1="140" x2="660" y2="140" stroke="#21262d" stroke-width="0.5" stroke-dasharray="4,4"/>
+  <line x1="160" y1="200" x2="660" y2="200" stroke="#21262d" stroke-width="0.5" stroke-dasharray="4,4"/>
+  <line x1="160" y1="260" x2="660" y2="260" stroke="#21262d" stroke-width="0.5" stroke-dasharray="4,4"/>
+
+  <!-- Scale labels -->
+  <text x="152" y="324" text-anchor="end" fill="#8b949e" font-size="10">0</text>
+  <text x="152" y="264" text-anchor="end" fill="#8b949e" font-size="10">500</text>
+  <text x="152" y="204" text-anchor="end" fill="#8b949e" font-size="10">1000</text>
+  <text x="152" y="144" text-anchor="end" fill="#8b949e" font-size="10">1500</text>
+  <text x="152" y="84" text-anchor="end" fill="#8b949e" font-size="10">2000</text>
+
+  <!-- Bar: GPT-4o-mini (quantized ~1800 MB) -->
+  <rect x="190" y="105.6" width="90" height="214.4" fill="url(#gpt_grad)" rx="4" opacity="0.85"/>
+  <text x="235" y="98" text-anchor="middle" fill="#4ade80" font-size="13" font-weight="600">1,800 MB</text>
+  <text x="235" y="345" text-anchor="middle" fill="#c9d1d9" font-size="11">GPT-4o-mini</text>
+  <text x="235" y="358" text-anchor="middle" fill="#8b949e" font-size="9">(Quantized)</text>
+
+  <!-- Bar: Llama 3.2 1B (quantized ~700 MB) -->
+  <rect x="310" y="236" width="90" height="84" fill="url(#llama_grad)" rx="4" opacity="0.85"/>
+  <text x="355" y="229" text-anchor="middle" fill="#f87171" font-size="13" font-weight="600">700 MB</text>
+  <text x="355" y="345" text-anchor="middle" fill="#c9d1d9" font-size="11">Llama 3.2-1B</text>
+  <text x="355" y="358" text-anchor="middle" fill="#8b949e" font-size="9">(Q4 GGUF)</text>
+
+  <!-- Bar: Cactus Needle 3 (29 MB) -->
+  <rect x="430" y="316.52" width="90" height="3.48" fill="url(#needle_grad)" rx="2" opacity="0.85"/>
+  <text x="475" y="310" text-anchor="middle" fill="#818cf8" font-size="13" font-weight="600">29 MB</text>
+  <text x="475" y="345" text-anchor="middle" fill="#c9d1d9" font-size="11">Cactus Needle 3</text>
+  <text x="475" y="358" text-anchor="middle" fill="#8b949e" font-size="9">(CQ2 2.1 bpw)</text>
+
+  <!-- Bar: MicroForge (7.19 MB) - highlighted -->
+  <rect x="550" y="319.14" width="90" height="0.86" fill="url(#forge_grad)" rx="1" opacity="0.9" filter="url(#glow)"/>
+  <!-- Make the bar visible with minimum height -->
+  <rect x="550" y="314" width="90" height="6" fill="url(#forge_grad)" rx="3" opacity="0.95" filter="url(#glow)"/>
+  <text x="595" y="307" text-anchor="middle" fill="#fb923c" font-size="15" font-weight="700">7.19 MB</text>
+  <text x="595" y="345" text-anchor="middle" fill="#f0f6fc" font-size="11" font-weight="600">MicroForge</text>
+  <text x="595" y="358" text-anchor="middle" fill="#f97316" font-size="9" font-weight="600">(BitNet 1.58 bpw)</text>
+
+  <!-- Winner callout -->
+  <rect x="532" y="268" width="126" height="28" fill="#f97316" rx="14" opacity="0.15"/>
+  <text x="595" y="286" text-anchor="middle" fill="#f97316" font-size="11" font-weight="700">⚡ 75% SMALLER</text>
+</svg>
