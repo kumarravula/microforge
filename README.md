@@ -19,6 +19,10 @@
 
 ---
 
+> **MicroForge** is a sub-8 MB open-weight foundation model engineered for ultra-low-latency on-device function calling, mobile intent routing, and structured JSON extraction. By replacing floating-point multiply-accumulate operations with BitNet b1.58 ternary additions and subtractions, MicroForge delivers full 12-layer transformer reasoning on battery-constrained edge CPUs (ARM Cortex-M/A, RISC-V, x86) with **0.0% syntax hallucinations**.
+
+---
+
 ## ⚡ 3-Line Quickstart (Just Like Needle)
 
 MicroForge is designed for zero-friction integration. Load the packed binary and invoke tool calls with three lines of Python:
