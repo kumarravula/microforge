@@ -1,0 +1,25 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# PyTorch Checkpoints & Raw Data (Keep small models/microforge.bin)
+checkpoints/*.pt
+data/**/raw/
+*.zip
+
+# Virtual environments
+venv/
+.venv/
+env/
+
+# SSH keys & secrets
+.ssh/
+*.pem
+*.key
+
+# IDE & OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

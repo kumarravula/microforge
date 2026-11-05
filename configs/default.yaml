@@ -1,0 +1,48 @@
+model:
+  d_model: 256
+  n_layers: 4
+  n_query_heads: 4
+  n_kv_heads: 2
+  d_ff: 768
+  vocab_size: 4096
+  max_seq_len: 256
+  embedding_factor_dim: 64
+  num_tool_classes: 64
+  dropout: 0.0
+  tie_embeddings: true
+
+training:
+  batch_size: 16
+  learning_rate: 1.0e-3
+  weight_decay: 0.01
+  epochs: 3
+  warmup_steps: 10
+  max_grad_norm: 1.0
+  gradient_accumulation_steps: 1
+  lm_loss_weight: 1.0
+  tool_loss_weight: 1.0
+  confidence_loss_weight: 0.5
+  val_every_steps: 10
+  log_every_steps: 5
+  early_stopping_patience: 10
+  mixed_precision: false
+
+distillation:
+  enabled: false
+  teacher_model: null
+  temperature: 2.0
+  kd_alpha: 0.5
+  feature_matching: false
+
+data:
+  train_path: data/train.jsonl
+  val_path: data/val.jsonl
+  test_path: data/test.jsonl
+  tools_schema: tools_schemas/example_tools.json
+  max_seq_len: 256
+  num_workers: 0
+
+export:
+  quantize_bits: 1.58
+  output_format: microforge
+  output_path: models/microforge.bin

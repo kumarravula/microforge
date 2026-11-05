@@ -1,0 +1,504 @@
+{
+  "tools": [
+    {
+      "name": "turn_on_lights",
+      "description": "Turn on the lights in a specific room or area",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "room": {
+            "type": "string",
+            "description": "The room or area to control",
+            "enum": ["living_room", "bedroom", "kitchen", "bathroom", "hallway", "garage", "office", "dining_room", "patio"]
+          },
+          "brightness": {
+            "type": "integer",
+            "description": "Brightness level from 0 to 100"
+          },
+          "color": {
+            "type": "string",
+            "description": "Light color",
+            "enum": ["white", "warm_white", "cool_white", "red", "blue", "green", "yellow", "purple", "orange"]
+          }
+        },
+        "required": ["room"]
+      }
+    },
+    {
+      "name": "turn_off_lights",
+      "description": "Turn off the lights in a specific room or area",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "room": {
+            "type": "string",
+            "description": "The room or area to control",
+            "enum": ["living_room", "bedroom", "kitchen", "bathroom", "hallway", "garage", "office", "dining_room", "patio"]
+          }
+        },
+        "required": ["room"]
+      }
+    },
+    {
+      "name": "set_thermostat",
+      "description": "Set the thermostat temperature and mode for heating or cooling",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "temperature": {
+            "type": "number",
+            "description": "Target temperature in degrees"
+          },
+          "unit": {
+            "type": "string",
+            "description": "Temperature unit",
+            "enum": ["celsius", "fahrenheit"]
+          },
+          "mode": {
+            "type": "string",
+            "description": "HVAC mode",
+            "enum": ["heat", "cool", "auto", "off"]
+          }
+        },
+        "required": ["temperature"]
+      }
+    },
+    {
+      "name": "lock_door",
+      "description": "Lock or unlock a smart door lock",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "door": {
+            "type": "string",
+            "description": "Which door to control",
+            "enum": ["front_door", "back_door", "garage_door", "side_door"]
+          },
+          "action": {
+            "type": "string",
+            "description": "Lock or unlock the door",
+            "enum": ["lock", "unlock"]
+          }
+        },
+        "required": ["door", "action"]
+      }
+    },
+    {
+      "name": "set_blinds",
+      "description": "Open, close, or set the position of smart blinds or curtains",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "room": {
+            "type": "string",
+            "description": "Room where the blinds are located",
+            "enum": ["living_room", "bedroom", "kitchen", "office", "dining_room"]
+          },
+          "position": {
+            "type": "integer",
+            "description": "Blind position as percentage open (0=closed, 100=fully open)"
+          }
+        },
+        "required": ["room", "position"]
+      }
+    },
+    {
+      "name": "play_music",
+      "description": "Play music by song name, artist, genre, or playlist",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "query": {
+            "type": "string",
+            "description": "Song name, artist, genre, or playlist name"
+          },
+          "source": {
+            "type": "string",
+            "description": "Music source or service",
+            "enum": ["spotify", "apple_music", "youtube_music", "local", "radio"]
+          },
+          "device": {
+            "type": "string",
+            "description": "Playback device",
+            "enum": ["speaker", "headphones", "tv", "all"]
+          },
+          "shuffle": {
+            "type": "boolean",
+            "description": "Whether to shuffle playback"
+          }
+        },
+        "required": ["query"]
+      }
+    },
+    {
+      "name": "pause_media",
+      "description": "Pause the currently playing media",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "device": {
+            "type": "string",
+            "description": "Device to pause",
+            "enum": ["speaker", "tv", "all"]
+          }
+        }
+      }
+    },
+    {
+      "name": "skip_track",
+      "description": "Skip to the next or previous track in the current playlist",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "direction": {
+            "type": "string",
+            "description": "Skip direction",
+            "enum": ["next", "previous"]
+          }
+        },
+        "required": ["direction"]
+      }
+    },
+    {
+      "name": "set_volume",
+      "description": "Set the volume level on a device",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "level": {
+            "type": "integer",
+            "description": "Volume level from 0 to 100"
+          },
+          "device": {
+            "type": "string",
+            "description": "Device to adjust",
+            "enum": ["speaker", "tv", "all"]
+          }
+        },
+        "required": ["level"]
+      }
+    },
+    {
+      "name": "send_message",
+      "description": "Send a text message to a contact",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "contact": {
+            "type": "string",
+            "description": "Recipient name or phone number"
+          },
+          "message": {
+            "type": "string",
+            "description": "Message content"
+          },
+          "app": {
+            "type": "string",
+            "description": "Messaging app to use",
+            "enum": ["sms", "whatsapp", "telegram", "signal"]
+          }
+        },
+        "required": ["contact", "message"]
+      }
+    },
+    {
+      "name": "make_call",
+      "description": "Make a phone call to a contact",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "contact": {
+            "type": "string",
+            "description": "Contact name or phone number"
+          },
+          "video": {
+            "type": "boolean",
+            "description": "Whether to make a video call"
+          }
+        },
+        "required": ["contact"]
+      }
+    },
+    {
+      "name": "set_timer",
+      "description": "Set a countdown timer",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "duration": {
+            "type": "integer",
+            "description": "Timer duration in seconds"
+          },
+          "label": {
+            "type": "string",
+            "description": "Optional label for the timer"
+          }
+        },
+        "required": ["duration"]
+      }
+    },
+    {
+      "name": "set_alarm",
+      "description": "Set an alarm at a specific time",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "time": {
+            "type": "string",
+            "description": "Alarm time in HH:MM format (24h)"
+          },
+          "label": {
+            "type": "string",
+            "description": "Optional label for the alarm"
+          },
+          "repeat": {
+            "type": "string",
+            "description": "Repeat schedule",
+            "enum": ["once", "daily", "weekdays", "weekends"]
+          }
+        },
+        "required": ["time"]
+      }
+    },
+    {
+      "name": "create_reminder",
+      "description": "Create a reminder with a message at a specific time or location",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "message": {
+            "type": "string",
+            "description": "Reminder message"
+          },
+          "time": {
+            "type": "string",
+            "description": "When to trigger the reminder (ISO 8601 or relative like '2 hours')"
+          },
+          "location": {
+            "type": "string",
+            "description": "Location-based trigger"
+          }
+        },
+        "required": ["message"]
+      }
+    },
+    {
+      "name": "add_calendar_event",
+      "description": "Add an event to the calendar",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "title": {
+            "type": "string",
+            "description": "Event title"
+          },
+          "start_time": {
+            "type": "string",
+            "description": "Event start time in ISO 8601 format"
+          },
+          "end_time": {
+            "type": "string",
+            "description": "Event end time in ISO 8601 format"
+          },
+          "location": {
+            "type": "string",
+            "description": "Event location"
+          },
+          "attendees": {
+            "type": "array",
+            "description": "List of attendee names or emails",
+            "items": {"type": "string"}
+          }
+        },
+        "required": ["title", "start_time"]
+      }
+    },
+    {
+      "name": "get_weather",
+      "description": "Get the current weather for a location",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "location": {
+            "type": "string",
+            "description": "City name or coordinates"
+          },
+          "unit": {
+            "type": "string",
+            "description": "Temperature unit",
+            "enum": ["celsius", "fahrenheit"]
+          }
+        },
+        "required": ["location"]
+      }
+    },
+    {
+      "name": "get_forecast",
+      "description": "Get the weather forecast for upcoming days",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "location": {
+            "type": "string",
+            "description": "City name or coordinates"
+          },
+          "days": {
+            "type": "integer",
+            "description": "Number of days to forecast (1-7)"
+          },
+          "unit": {
+            "type": "string",
+            "description": "Temperature unit",
+            "enum": ["celsius", "fahrenheit"]
+          }
+        },
+        "required": ["location"]
+      }
+    },
+    {
+      "name": "get_directions",
+      "description": "Get directions from one location to another",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "origin": {
+            "type": "string",
+            "description": "Starting location"
+          },
+          "destination": {
+            "type": "string",
+            "description": "Destination location"
+          },
+          "mode": {
+            "type": "string",
+            "description": "Travel mode",
+            "enum": ["driving", "walking", "cycling", "transit"]
+          }
+        },
+        "required": ["destination"]
+      }
+    },
+    {
+      "name": "find_nearby",
+      "description": "Find nearby places or points of interest",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "category": {
+            "type": "string",
+            "description": "Type of place to find",
+            "enum": ["restaurant", "gas_station", "pharmacy", "hospital", "atm", "grocery", "coffee_shop", "parking", "hotel"]
+          },
+          "location": {
+            "type": "string",
+            "description": "Search near this location (defaults to current location)"
+          },
+          "radius": {
+            "type": "integer",
+            "description": "Search radius in meters"
+          }
+        },
+        "required": ["category"]
+      }
+    },
+    {
+      "name": "set_brightness",
+      "description": "Set the screen brightness on the device",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "level": {
+            "type": "integer",
+            "description": "Brightness level from 0 to 100"
+          },
+          "auto": {
+            "type": "boolean",
+            "description": "Enable auto brightness"
+          }
+        },
+        "required": ["level"]
+      }
+    },
+    {
+      "name": "toggle_wifi",
+      "description": "Turn Wi-Fi on or off",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "enabled": {
+            "type": "boolean",
+            "description": "True to enable, false to disable Wi-Fi"
+          }
+        },
+        "required": ["enabled"]
+      }
+    },
+    {
+      "name": "toggle_bluetooth",
+      "description": "Turn Bluetooth on or off",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "enabled": {
+            "type": "boolean",
+            "description": "True to enable, false to disable Bluetooth"
+          }
+        },
+        "required": ["enabled"]
+      }
+    },
+    {
+      "name": "take_screenshot",
+      "description": "Take a screenshot of the current screen",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "save_path": {
+            "type": "string",
+            "description": "File path to save the screenshot"
+          }
+        }
+      }
+    },
+    {
+      "name": "search_web",
+      "description": "Search the web for information",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "query": {
+            "type": "string",
+            "description": "Search query"
+          },
+          "num_results": {
+            "type": "integer",
+            "description": "Number of results to return"
+          }
+        },
+        "required": ["query"]
+      }
+    },
+    {
+      "name": "translate_text",
+      "description": "Translate text from one language to another",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "text": {
+            "type": "string",
+            "description": "Text to translate"
+          },
+          "source_language": {
+            "type": "string",
+            "description": "Source language code (e.g. 'en')"
+          },
+          "target_language": {
+            "type": "string",
+            "description": "Target language code (e.g. 'es')"
+          }
+        },
+        "required": ["text", "target_language"]
+      }
+    }
+  ]
+}

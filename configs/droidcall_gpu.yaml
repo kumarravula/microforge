@@ -1,0 +1,48 @@
+model:
+  d_model: 512
+  n_layers: 12
+  n_query_heads: 8
+  n_kv_heads: 2
+  d_ff: 1536
+  vocab_size: 4096
+  max_seq_len: 512
+  embedding_factor_dim: 128
+  num_tool_classes: 64
+  dropout: 0.05
+  tie_embeddings: true
+
+training:
+  batch_size: 32
+  learning_rate: 5.0e-4
+  weight_decay: 0.01
+  epochs: 25
+  warmup_steps: 100
+  max_grad_norm: 1.0
+  gradient_accumulation_steps: 2
+  lm_loss_weight: 1.0
+  tool_loss_weight: 1.0
+  confidence_loss_weight: 0.5
+  val_every_steps: 50
+  log_every_steps: 10
+  early_stopping_patience: 10
+  mixed_precision: true
+
+distillation:
+  enabled: false
+  teacher_model: null
+  temperature: 2.0
+  kd_alpha: 0.5
+  feature_matching: false
+
+data:
+  train_path: data/droidcall/droidcall_train.jsonl
+  val_path: data/droidcall/droidcall_val.jsonl
+  test_path: data/droidcall/droidcall_test.jsonl
+  tools_schema: tools_schemas/droidcall_tools.json
+  max_seq_len: 512
+  num_workers: 2
+
+export:
+  quantize_bits: 1.58
+  output_format: microforge
+  output_path: models/microforge.bin
