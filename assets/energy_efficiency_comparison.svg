@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 740 380" font-family="'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif">
+  <defs>
+    <linearGradient id="darkBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0b0f17"/>
+      <stop offset="50%" stop-color="#111722"/>
+      <stop offset="100%" stop-color="#161e2e"/>
+    </linearGradient>
+    <linearGradient id="orangeGlow" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ff5722"/>
+      <stop offset="100%" stop-color="#ff9800"/>
+    </linearGradient>
+    <linearGradient id="blueBar" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#3b82f6"/>
+      <stop offset="100%" stop-color="#60a5fa"/>
+    </linearGradient>
+    <linearGradient id="purpleBar" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#8b5cf6"/>
+      <stop offset="100%" stop-color="#a78bfa"/>
+    </linearGradient>
+    <linearGradient id="redBar" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ef4444"/>
+      <stop offset="100%" stop-color="#f87171"/>
+    </linearGradient>
+    <filter id="neonDrop" x="-10%" y="-10%" width="120%" height="120%">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+
+  <!-- Background Card -->
+  <rect width="740" height="380" rx="14" fill="url(#darkBg)" stroke="#222f3e" stroke-width="1.5"/>
+
+  <!-- Title & Subtitle -->
+  <text x="370" y="38" text-anchor="middle" fill="#ffffff" font-size="19" font-weight="800" letter-spacing="0.3px">Edge Hardware Energy &amp; Arithmetic Efficiency</text>
+  <text x="370" y="58" text-anchor="middle" fill="#94a3b8" font-size="11.5">Energy consumed per 1M weight operations on ARM Cortex edge CPUs (Lower is better)</text>
+
+  <!-- Section 1: Matrix Multiplications (Left Box) -->
+  <g transform="translate(40, 85)">
+    <!-- Container -->
+    <rect width="310" height="250" rx="10" fill="#131c2a" stroke="#1e293b" stroke-width="1"/>
+    <text x="155" y="30" text-anchor="middle" fill="#e2e8f0" font-size="14" font-weight="700">Compute Nature</text>
+    <text x="155" y="48" text-anchor="middle" fill="#64748b" font-size="10">Floating-Point Multiplies vs Pure Additions</text>
+
+    <!-- Needle 3 -->
+    <text x="25" y="85" fill="#cbd5e1" font-size="12" font-weight="600">Cactus Needle 3</text>
+    <text x="285" y="85" text-anchor="end" fill="#93c5fd" font-size="11" font-weight="700">~3.7 mJ / 1M ops</text>
+    <rect x="25" y="94" width="260" height="18" rx="4" fill="#1e293b"/>
+    <rect x="25" y="94" width="240" height="18" rx="4" fill="url(#blueBar)"/>
+    <text x="35" y="107" fill="#ffffff" font-size="9.5" font-weight="600">Requires FP Dequantization</text>
+
+    <!-- Llama 3.2 (4-bit) -->
+    <text x="25" y="140" fill="#cbd5e1" font-size="12" font-weight="600">Llama 3.2-1B (Q4)</text>
+    <text x="285" y="140" text-anchor="end" fill="#fca5a5" font-size="11" font-weight="700">~4.5 mJ / 1M ops</text>
+    <rect x="25" y="149" width="260" height="18" rx="4" fill="#1e293b"/>
+    <rect x="25" y="149" width="260" height="18" rx="4" fill="url(#redBar)"/>
+    <text x="35" y="162" fill="#ffffff" font-size="9.5" font-weight="600">4-Bit INT × FP MAC</text>
+
+    <!-- MicroForge -->
+    <text x="25" y="195" fill="#ffedd5" font-size="12" font-weight="700">MicroForge (Ours)</text>
+    <text x="285" y="195" text-anchor="end" fill="#fb923c" font-size="12" font-weight="800">~0.1 mJ / 1M ops</text>
+    <rect x="25" y="204" width="260" height="20" rx="4" fill="#1e293b"/>
+    <rect x="25" y="204" width="22" height="20" rx="4" fill="url(#orangeGlow)" filter="url(#neonDrop)"/>
+    <text x="55" y="218" fill="#fb923c" font-size="10" font-weight="700">ZERO FP Multiplications (Pure ADD/SUB)</text>
+  </g>
+
+  <!-- Section 2: Battery Life & RAM (Right Box) -->
+  <g transform="translate(390, 85)">
+    <rect width="310" height="250" rx="10" fill="#131c2a" stroke="#1e293b" stroke-width="1"/>
+    <text x="155" y="30" text-anchor="middle" fill="#e2e8f0" font-size="14" font-weight="700">Edge Device Footprint</text>
+    <text x="155" y="48" text-anchor="middle" fill="#64748b" font-size="10">Active RAM Footprint &amp; Peak Memory</text>
+
+    <!-- Bar 1: Llama 3.2-1B -->
+    <text x="25" y="85" fill="#cbd5e1" font-size="12" font-weight="600">Llama 3.2-1B Q4</text>
+    <text x="285" y="85" text-anchor="end" fill="#f87171" font-size="11" font-weight="600">~850 MB RAM</text>
+    <rect x="25" y="94" width="260" height="18" rx="4" fill="#1e293b"/>
+    <rect x="25" y="94" width="250" height="18" rx="4" fill="url(#redBar)"/>
+
+    <!-- Bar 2: Cactus Needle 3 -->
+    <text x="25" y="140" fill="#cbd5e1" font-size="12" font-weight="600">Cactus Needle 3</text>
+    <text x="285" y="140" text-anchor="end" fill="#818cf8" font-size="11" font-weight="600">~38 MB RAM</text>
+    <rect x="25" y="149" width="260" height="18" rx="4" fill="#1e293b"/>
+    <rect x="25" y="149" width="70" height="18" rx="4" fill="url(#purpleBar)"/>
+
+    <!-- Bar 3: MicroForge -->
+    <text x="25" y="195" fill="#ffedd5" font-size="12" font-weight="700">MicroForge</text>
+    <text x="285" y="195" text-anchor="end" fill="#fb923c" font-size="12" font-weight="800">~9.5 MB RAM</text>
+    <rect x="25" y="204" width="260" height="20" rx="4" fill="#1e293b"/>
+    <rect x="25" y="204" width="28" height="20" rx="4" fill="url(#orangeGlow)" filter="url(#neonDrop)"/>
+    <text x="60" y="218" fill="#fdba74" font-size="10" font-weight="700">Fits in Embedded Microcontrollers!</text>
+  </g>
+
+  <!-- Bottom Callout Badge -->
+  <g transform="translate(190, 348)">
+    <rect width="360" height="22" rx="11" fill="#f97316" fill-opacity="0.12" stroke="#f97316" stroke-width="0.8"/>
+    <text x="180" y="15" text-anchor="middle" fill="#fb923c" font-size="11" font-weight="700">⚡ 37× Less Arithmetic Energy than Standard FP32 Dequantization</text>
+  </g>
+</svg>
